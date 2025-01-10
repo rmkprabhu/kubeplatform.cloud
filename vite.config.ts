@@ -3,15 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
+// https://vitejs.dev/config/sd
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: true
   },
   plugins: [
     react(),
@@ -23,6 +19,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'kubernetes-data': ['./src/data/kubernetes.ts']
+        }
+      }
+    }
+  }
 }));
 
 //added stable static web app for hosting
