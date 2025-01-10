@@ -80,7 +80,7 @@ export const kubernetesData: Category[] = [
         "questions": [
           {
             "type": "Text",
-            "question": "What is DevOps, and how does it differ from traditional software development methodologies?",
+            "question": "What is DevOps?, and how does it differ from traditional software development methodologies?",
             "answer": "DevOps is a cultural and collaborative approach emphasizing communication, integration, and automation between development and operations teams. Unlike traditional methods, it aims to break down silos and promote continuous feedback. [3]"
           },
           {
