@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 267 35% 12%;
+    --foreground: 210 40% 98%;
+    --card: 267 35% 16%;
+    --card-foreground: 210 40% 98%;
+    --popover: 267 35% 16%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 267 84% 81%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 271 84% 74%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 267 35% 24%;
+    --muted-foreground: 210 40% 80%;
+    --accent: 271 84% 74%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 267 35% 24%;
+    --input: 267 35% 24%;
+    --ring: 267 84% 81%;
+    --radius: 1rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.card-hover {
+  @apply transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/20;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-background via-background to-card;
+  background-image: radial-gradient(circle at 50% 50%, hsl(267 35% 16%), hsl(267 35% 12%));
+}
+
+.gradient-card-beginner {
+  @apply bg-gradient-to-br from-emerald-500 to-emerald-400;
+}
+
+.gradient-card-intermediate {
+  @apply bg-gradient-to-br from-violet-500 to-fuchsia-400;
+}
+
+.gradient-card-advanced {
+  @apply bg-gradient-to-br from-orange-400 to-amber-500;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
